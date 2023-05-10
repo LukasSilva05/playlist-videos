@@ -5,8 +5,10 @@
     font-family: 'JetBrains Mono', monospace;
 }
 
-body {
+body,
+html {
     background: #eee;
+    height: 100%;
 }
 
 .heading {
@@ -14,7 +16,6 @@ body {
     font-size: 40px;
     text-align: center;
     padding: 10px;
-    text-shadow: 1px 1px 5px #29b95e
 }
 
 .container {
@@ -26,16 +27,22 @@ body {
 }
 
 .container .main-video {
-    background: #fff;
     border-radius: 5px;
     padding: 10px;
+    height: 550px;
+}
 
+.container .main-video .video {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
 }
 
 .container .main-video video {
     width: 100%;
     border-radius: 5px;
-    box-shadow: -1px 1px 6px 1px #29b95e;
+    height: 100%;
 }
 
 .container .main-video .title {
@@ -43,11 +50,9 @@ body {
     font-size: 23px;
     padding-top: 15px;
     padding-bottom: 15px;
-    text-shadow: 1px 1px 5px #29b95e
 }
 
 .container .video-list {
-    background: #fff;
     border-radius: 5px;
     height: 550px;
     overflow-y: scroll;
@@ -70,24 +75,20 @@ body {
 .container .video-list .vid video {
     width: 100px;
     border-radius: 5px;
-    box-shadow: -1px 1px 6px 1px #29b95e;
 }
 
 .container .video-list .vid {
     display: flex;
     align-items: center;
     gap: 15px;
-    background: #f7f7f7;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
-    border: 1px solid rgba(0, 0, 0, .1);
     cursor: pointer;
 }
 
 .container .video-list .vid:hover {
-    background: #eee;
-    box-shadow: -1px 1px 40px 1px #29b95e;
+    background: #29b95e3c;
 }
 
 .container .video-list .vid.active {
@@ -101,18 +102,37 @@ body {
 .container .video-list .vid .title {
     color: #333;
     font-size: 17px;
-    text-shadow: 1px 1px 5px #29b95e
+
 }
 
-@media (max-width: 991px) {
+@media (max-width: 960px) {
     .container {
         grid-template-columns: 1.5fr 1fr;
         padding: 10px;
     }
+
+    .container .video-list {
+        height: 450px;
+    }
+
+    .container .main-video {
+        height: 450px;
+    }
+
 }
 
 @media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container .main-video {
+        height: 300px;
+    }
+
+    .container .main-video .title {
+        font-size: 18px;
     }
 }
