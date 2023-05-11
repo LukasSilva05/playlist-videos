@@ -28,7 +28,6 @@ function clickOnVideo() {
 
     listVideos.forEach((video, index) => {
         video.addEventListener('click', () => {
-            console.log()
             listVideos.forEach(vid => vid.classList.remove('active'))
             video.classList.add('active')
 
