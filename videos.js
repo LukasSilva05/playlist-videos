@@ -27,4 +27,16 @@ export default [
         src: "./img/07.mp4",
         title: "Aula 07",
     },
+    {
+        src: "./img/07.mp4",
+        title: "Aula 08",
+    },
+    {
+        src: "./img/07.mp4",
+        title: "Aula 09",
+    },
+    {
+        src: "./img/07.mp4",
+        title: "Aula 10",
+    },
 ];
