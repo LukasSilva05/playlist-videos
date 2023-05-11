@@ -72,7 +72,7 @@ html {
     border-radius: 50px;
 }
 
-.container .video-list .vid video {
+.container .video-list .vid img {
     width: 100px;
     border-radius: 5px;
 }

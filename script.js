@@ -13,7 +13,7 @@ function loadVideos() {
 
         div.innerHTML = `
         <div class="${index + 1 === 1 ? "vid active" : "vid"}">
-            <video src=${video.src} muted></video>
+            <img src="${video.thumb}"/>
             <h3 class="title">${video.title}</h3>
         </div>
         `
@@ -21,20 +21,20 @@ function loadVideos() {
     })
     clickOnVideo()
 }
-
 function clickOnVideo() {
     let listVideos = document.querySelectorAll('.video-list .vid')
     let mainVideo = document.querySelector('.main-video video')
     let title = document.querySelector('.main-video .title')
 
-    listVideos.forEach(video => {
+    listVideos.forEach((video, index) => {
         video.addEventListener('click', () => {
+            console.log()
             listVideos.forEach(vid => vid.classList.remove('active'))
             video.classList.add('active')
 
             if (video.classList.contains('active')) {
-                mainVideo.src = video.children[0].getAttribute('src')
-                title.innerHTML = video.children[1].innerHTML
+                mainVideo.src = videos[index].src
+                title.innerHTML = videos[index].title
             }
         })
     })
